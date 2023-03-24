@@ -18,5 +18,10 @@ public class SpringDI {
         ui.add("Ivan ivanov");
         ui.print();
         ui.askStr("2 + 2 = ?");
+
+        /* Повторно получили bean, т.к. режим создания объектов prototype, создается новый объект при вызове
+        * из контекста, поэтому print() выполняется для пустого объекта. */
+        ui = context.getBean(StartUI.class);
+        ui.print();
     }
 }
